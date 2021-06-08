@@ -12,6 +12,32 @@ The first letter should not be lowercase, for example road.
 If the word does not meet the rules, we return "Invalid word".
 */
 
-function i(word) {
-  //.. 
+const i = (word) => {
+  let newWord = 'i';
+  const vowels = {
+    a : true,
+    e : true,
+    i : true,
+    o : true,
+    u : true
+  };
+  let vowelSum = 0;
+
+  if(word.length === 0) {
+    return 'Invalid word';
+  }
+
+  for(let i = 0; i < word.length; i++) {
+    if(vowels[word[i].toLowerCase()] === true) {
+      vowelSum++;
+    }
+    newWord += word[i];
+  }
+
+
+  if(word[0].toLowerCase() !== 'i' && vowelSum < (word.length / 2) && word[0].toLowerCase() !== word[0]) {
+    return newWord;
+  } else {
+    return 'Invalid word';
+  }
 }
