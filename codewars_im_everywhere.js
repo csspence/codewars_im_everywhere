@@ -34,7 +34,6 @@ const i = (word) => {
     newWord += word[i];
   }
 
-
   if(word[0].toLowerCase() !== 'i' && vowelSum < (word.length / 2) && word[0].toLowerCase() !== word[0]) {
     return newWord;
   } else {
